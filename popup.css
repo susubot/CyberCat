@@ -1,0 +1,199 @@
+body {
+    width: 500px; /* Fixed width */
+    height: 400px; /* Fixed height */
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #111111, #394648, #876B8C); /* Seamless gradient */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 90px;
+}
+
+.gradient-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+/* Remove the gradient from header and body individually */
+.header {
+    display: flex; /* Aligns items horizontally */
+    align-items: flex-start; /* Vertically centers items */
+    gap: 2px; /* Adds space between the image and the text */
+    width: 100%; /* Make header take full width */
+    padding: 0px; /* Remove padding */
+    margin-bottom: 10px;
+}
+
+.header-image {
+    width: 50px;
+    height: 50px;
+}
+
+.header-text {
+    margin: 0; /* Removes default margin from the h1 */
+    font-size: 35px; /* Adjust the font size of the h1 text */
+    color: #536878; /* Text color */
+    text-shadow: 
+    8px 8px 8px rgba(0,0,0,0.5),
+    -0px -0px 8px #00000080;
+    -webkit-text-stroke: 2px #00000080;
+    
+}
+
+h1 {
+    margin: 0;
+    font-size: 18px;
+    color: white;
+}
+
+
+/* Switch styles */
+.switch {
+    --input-focus: #95B5C7;
+    --font-color: #111111 ;
+    --font-color-sub: #536878;
+    --bg-color: #394648;
+    --bg-color-alt: #536878;
+    --main-color: #111111 ;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 50px;
+    height: 20px;
+}
+
+.toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    box-shadow: 5px 5px var(--main-color);
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-color);
+    transition: 0.3s;
+}
+
+.slider:before {
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    left: -2px;
+    bottom: 2px;
+    background-color: var(--bg-color-alt);
+    box-shadow: 0 5px 0 var(--main-color);
+    transition: 0.3s;
+}
+
+.toggle:checked + .slider {
+    background-color: var(--input-focus);
+}
+
+.toggle:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+.setting-btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: #536878;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 4px 4px 4px 4px #111111;
+    position: fixed; /* Fixes the button in place */
+    bottom: 20px; /* Adjust the distance from the bottom */
+    left: 20px; /* Adjust the distance from the left */
+    z-index: 1000; /* Ensures it stays above other content */
+}
+
+.bar {
+    width: 50%;
+    height: 2px;
+    background-color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 2px;
+}
+
+.bar::before {
+    content: "";
+    width: 2px;
+    height: 2px;
+    background-color: #394648;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid #111111;
+    transition: all 0.3s;
+    box-shadow: 0px 0px 5px #4b4b4b
+}
+
+.bar1::before {
+    transform: translateX(-4px);
+}
+
+.bar2::before {
+    transform: translateX(4px);
+}
+
+.setting-btn:hover .bar1::before {
+    transform: translateX(4px);
+}
+
+.setting-btn:hover .bar2::before {
+    transform: translateX(-4px);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 4 equal-width columns */
+    grid-gap: 40px; /* Space between items */
+    width: 450px; /* Adjust width to fit within body */
+    padding: 0px;
+    box-sizing: border-box;
+    margin-top: 0px; /* Space between header and grid */
+}
+
+/* Grid Items (semi-transparent boxes) */
+.grid-item {
+    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black */
+    border: 2px solid #394648; /* White border around boxes */
+    min-height: 130px; /* Ensure minimum height for each box */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 30px;
+}
