@@ -9,7 +9,7 @@ body {
     justify-content: flex-start;
     margin-bottom: 90px;
 }
-
+/* Gradient setup for background*/
 .gradient-container {
     display: flex;
     align-items: flex-start;
@@ -28,12 +28,12 @@ body {
     padding: 0px; /* Remove padding */
     margin-bottom: 10px;
 }
-
+/*cat logo size*/
 .header-image {
     width: 50px;
     height: 50px;
 }
-
+/* title setup*/
 .header-text {
     margin: 0; /* Removes default margin from the h1 */
     font-size: 35px; /* Adjust the font size of the h1 text */
@@ -52,7 +52,7 @@ h1 {
 }
 
 
-/* Switch styles */
+/* Start of switch button code */
 .switch {
     --input-focus: #95B5C7;
     --font-color: #111111 ;
@@ -116,6 +116,8 @@ h1 {
     transform: translateX(30px);
 }
 
+
+/* Start of settings button code*/
 .setting-btn {
     width: 45px;
     height: 45px;
@@ -174,6 +176,7 @@ h1 {
     transform: translateX(-4px);
 }
 
+/* start of grid setup*/
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 4 equal-width columns */
