@@ -8,6 +8,8 @@
 </head>
 
 <body>
+
+
 	<!-- Header Section -->
 	<div class="header">
 		<img src="icons/catLogo128.png" alt="Icon" class="header-image">
@@ -20,10 +22,25 @@
 
 	<!-- Switch for some action -->
 	<label class="switch">
+		<p id="sliderText">E᙭TEᑎᔕIOᑎ ᗪIᔕᗩᗷᒪEᗪ</p> <!-- Text that changes -->
 		<input class="toggle" type="checkbox">
 		<span class="slider"></span>
 		<span class="card-side"></span>
 	</label>
+	<script src="popup.js">
+		// Select the text and slider elements
+		const sliderText = document.getElementById('sliderText');
+		const toggleInput = document.querySelector('.toggle');
+	
+		// Event listener for when the slider is toggled
+		toggleInput.addEventListener('change', () => {
+			if (toggleInput.checked) {
+				sliderText.textContent = 'Slider is ON'; // Text for "checked" state
+			} else {
+				sliderText.textContent = 'Slider is OFF'; // Text for "unchecked" state
+			}
+		});
+	</script>
 
 	<!-- Button that will open the popup -->
 	<button class="setting-btn" id="openPopupBtn">

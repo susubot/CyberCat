@@ -78,6 +78,16 @@ h1 {
     height: 0;
 }
 
+/* Text Above Slider */
+#sliderText {
+    font-size: 16px;
+    color: #536878;
+    text-shadow: 0 10px 10px rgba(1, 1, 1, 1); /* Optional: text shadow for visibility */
+    margin: 0; /* Remove default margin */
+    margin-right: 50px;
+   
+}
+
 .slider {
     box-sizing: border-box;
     border-radius: 5px;
@@ -92,6 +102,7 @@ h1 {
     background-color: var(--bg-color);
     transition: 0.3s;
 }
+
 
 .slider:before {
     box-sizing: border-box;
