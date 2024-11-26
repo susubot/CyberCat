@@ -49,7 +49,7 @@ function passwordStrengthMessage(strength, passwordField)
 {
 	// remove any existing message box:
 	let existingMessageBox = document.getElementById('password-strength-message');
-	if (existingMessage) existingMessageBox.remove();
+	if (existingMessageBox) existingMessageBox.remove();
 
 	// create new message box
 	let messageBox = document.createElement('div'); 
@@ -70,14 +70,18 @@ function passwordStrengthMessage(strength, passwordField)
 
 	// add feedback text:
 	let feedbackText = document.createElement('p');
-	// change text content:
-	feedbackText.textContent = 'Password Strength: ${strength}';
+	// change text content (use backticks for literals):
+	feedbackText.textContent = `Password Strength: ${strength}`;
 	// change feedback color depending on strength:
 	feedbackText.style.color = strength === 'strong' ? 'green' : 
 	    strength === 'medium' ? 'orange' : 'red';
 	
 	// create a containter for the strength meter:
 	let meterContainer = document.createElement('div')
+	// change width of container:
+	meterContainer.style.width = '100%'
+	// change height of container:
+	meterContainer.style.height = '10px';
 	// change background color of meter:
 	meterContainer.style.backgroundColor = '#e0e0e0';
 	// change border thickness:
