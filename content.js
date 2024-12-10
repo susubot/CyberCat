@@ -67,6 +67,9 @@ function passwordStrengthMessage(strength, passwordField)
 	messageBox.style.marginTop = '5px';
 	// change border thickness:
 	messageBox.style.borderRadius = '5px';
+	// ensures the message box appears above other page contents:
+	messageBox.style.zIndex = '1000';
+
 
 	// add feedback text:
 	let feedbackText = document.createElement('p');
@@ -114,6 +117,13 @@ function passwordStrengthMessage(strength, passwordField)
 	// append feedback text and meter to the message box:
 	messageBox.appendChild(feedbackText);
 	messageBox.appendChild(meterContainer);
+
+	// position message box:
+	messageBox.style.position = 'absolute';
+	messageBox.style.top = '100px'; // 100px from the top of the page
+	messageBox.style.left = '50px'; // 50px from the left of the page
+	
+
 
 	// append the message box near the input field:
 	passwordField.parentElement.appendChild(messageBox);
